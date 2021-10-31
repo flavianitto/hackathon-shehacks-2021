@@ -137,9 +137,6 @@ class UserInstance(models.Model):
 - ```DELETE``` usuário: permite fazer com o que o usuário exclua sua conta.
 - ```DELETE``` parceiro: permite fazer com o que o parceiro exclua sua conta.
 
-#### Plataforma Desktop
-Para fins de demonstração, é apresentado na imagem abaixo a homepage desktop inicial do template do bootstrap. 
-
 ## Projeto futuro
 No futuro, pretende-se manter a implementação do back-end em Django REST Framework, e, além disso, serão desenvolvidos tantos front-end e mobile client em React Native. Na questão do armazenamento de dados, a proposta é utilizar o serviço Cloud (AWS Bucket S3) e estruturar um Data Lake para fluxo e tratamento de dados, utilizando o modelo de recomendação dentro do ambiente em nuvem para se comunicar com a API.
 
