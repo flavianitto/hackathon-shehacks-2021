@@ -140,8 +140,8 @@ class UserInstance(models.Model):
 #### Plataforma Desktop
 Para fins de demonstração, é apresentado na imagem abaixo a homepage desktop inicial do template do bootstrap. 
 
-### Modelo de recomendação
-Como método de filtragem de conteúdo, inicialmente procura-se utilizar a filtragem baseada em contéudo, ou Content-Based, onde são geradas recomendações baseadas em contéudos já consumidos pelo usuário - criando um perfil desse. Tem como vantagem o feedback dispensável do usuário para que seja recomendado contéudo de qualidade. Futuramente, é possível a utilização de outra forma de filtragem de conteúdo, a colaborativa, ou Collaborative Filter. Tal abordagem assimila um padrão comum de contéudo entre usuários diferentes e passa a mesclar as características, gerando uma recomendação para ambos os usuários. Com relação à primeira filtragem, a coletiva permite que o usuário saia da bolha de conteúdo.
-
 ## Projeto futuro
-Pretende-se implementar o back-end em Django framework, além disso, iremos produzir o front-end e mobile client em React Native. Na questão do armazenamento de dados, a proposta é utilizar o serviço Cloud (AWS Bucket S3) e criar um Data Lake, utilizando o modelo de recomendação dentro do ambiente em nuvem para se comunicar com a API.
+No futuro, pretende-se manter a implementação do back-end em Django REST Framework, e, além disso, serão desenvolvidos tantos front-end e mobile client em React Native. Na questão do armazenamento de dados, a proposta é utilizar o serviço Cloud (AWS Bucket S3) e estruturar um Data Lake para fluxo e tratamento de dados, utilizando o modelo de recomendação dentro do ambiente em nuvem para se comunicar com a API.
+
+### Modelo de recomendação
+Como método de filtragem de conteúdo, inicialmente, procura-se utilizar a filtragem baseada em contéudo, ou Content-Based, onde são geradas recomendações baseadas em contéudos já consumidos pelo usuário - criando um perfil desse. Tem como vantagem o feedback dispensável do usuário para que seja recomendado contéudo de qualidade. Futuramente, é possível a utilização de outra forma de filtragem de conteúdo, a colaborativa, ou Collaborative Filter. Tal abordagem assimila um padrão comum de contéudo entre usuários diferentes e passa a mesclar as características, gerando uma recomendação para ambos os usuários. Com relação à primeira filtragem, a coletiva permite que o usuário saia da bolha de conteúdo.
