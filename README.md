@@ -24,11 +24,14 @@ Para consumir as requisições feitas para a plataforma, será utilizando o fram
 <img width="662" alt="backend-django-rest" src="https://user-images.githubusercontent.com/37030292/139594127-140d9ae5-a4da-4a81-9273-40b74a46afcd.PNG">
 
 #### Modelagem do Banco de Dados (`models.py`)
+Através do levantamento de informações relevantes para o projeto, se é pretendido utiliza-las na composição do sistema de recomendação para clientes, como localidades carentes de auxílio próximas a eles.
 
 #### Rotas principais (HTTP REST API)
 
 #### Plataforma Desktop
-
-## Projeto futuro
+Para fins de demonstração, é apresentado na imagem abaixo a homepage desktop inicial do template do bootstrap. 
 
 ### Modelo de recomendação
+Como método de filtragem de conteúdo, inicialmente procura-se utilizar a filtragem baseada em contéudo, ou Content-Based, onde são geradas recomendações baseadas em contéudos já consumidos pelo usuário - criando um perfil desse. Tem como vantagem o feedback dispensável do usuário para que seja recomendado contéudo de qualidade. Futuramente, é possível a utilização de outra forma de filtragem de conteúdo, a colaborativa, ou Collaborative Filter. Tal abordagem assimila um padrão comum de contéudo entre usuários diferentes e passa a mesclar as características, gerando uma recomendação para ambos os usuários. Com relação à primeira filtragem, a coletiva permite que o usuário saia da bolha de conteúdo.
+
+## Projeto futuro
