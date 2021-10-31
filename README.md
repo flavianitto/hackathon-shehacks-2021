@@ -144,3 +144,5 @@ Para fins de demonstração, é apresentado na imagem abaixo a homepage desktop 
 Como método de filtragem de conteúdo, inicialmente procura-se utilizar a filtragem baseada em contéudo, ou Content-Based, onde são geradas recomendações baseadas em contéudos já consumidos pelo usuário - criando um perfil desse. Tem como vantagem o feedback dispensável do usuário para que seja recomendado contéudo de qualidade. Futuramente, é possível a utilização de outra forma de filtragem de conteúdo, a colaborativa, ou Collaborative Filter. Tal abordagem assimila um padrão comum de contéudo entre usuários diferentes e passa a mesclar as características, gerando uma recomendação para ambos os usuários. Com relação à primeira filtragem, a coletiva permite que o usuário saia da bolha de conteúdo.
 
 ## Projeto futuro
+Em projetos futuros, pretende-se implementar o back-end em Django framework, além disso, iremos produzir o front-end e mobile client em React Native.
+Na questão do armazenamento de dados, uma proposta é utilizar o serviço Cloud (AWS Bucket S3) e criar um Data Lake, utilizando o modelo de recomendação dentro do ambiente em nuvem para se comunicar com a API
