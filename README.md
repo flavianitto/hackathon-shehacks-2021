@@ -26,12 +26,122 @@ Para consumir as requisições feitas para a plataforma, será utilizando o fram
 #### Modelagem do Banco de Dados (`models.py`)
 Através do levantamento de informações relevantes para o projeto, se é pretendido utiliza-las na composição do sistema de recomendação para clientes, como localidades carentes de auxílio próximas a eles.
 
-#### Rotas principais (HTTP REST API)
+##### User
+```
+class User(models.Model):
+
+    """Model representing a user's info."""
+
+    user_id = models.AutoField(primary_key=True)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    cpf_cnpj = models.CharField(max_length=20)
+    cellphone = models.CharField(max_length=20)
+    email = models.EmailField(max_length = 254)
+    password = models.CharField(max_length=30)
+    zipcode = models.CharField(max_length=15) 
+    address = models.CharField(max_length = 254)
+    number = models.CharField(max_length = 10)
+    address_complement = models.CharField(max_length=30) 
+    neighborhood = models.CharField(max_length = 30)
+    city = models.CharField(max_length = 100)
+    country = models.CharField(max_length = 100)
+
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now= True)
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.title
+```
+
+##### UserType
+```
+class Bank(models.Model):
+
+    """Model representing a Bank."""
+
+    bank_id = models.AutoField(primary_key=True)
+    code = models.IntegerField(max_length = 10)
+    name = models.CharField(max_length=100)
+```
+
+##### Bank
+```
+USER_TYPE = (
+        (0, "Receiver"),
+        (1, "Donator")
+    )
+
+TRANSACTION_TYPE = (
+        (0, "Money"),
+        (1, "Food")
+    )
+
+class UserType(models.Model):
+
+    """Model representing a user type."""
+
+    user_type_id = models.AutoField(primary_key=True)
+    user_type = models.IntegerField(choices=USER_TYPE, default=0)
+    transaction_type = models.IntegerField(choices=TRANSACTION_TYPE, default=0)
+```
+
+##### Partner
+```
+class Partner(models.Model):
+
+    """Model representing a parter's info."""
+
+    partner_id = models.AutoField(primary_key=True)
+    corporate_name = models.CharField(max_length=100)
+    cpf_cnpj = models.CharField(max_length=20)
+    cellphone = models.CharField(max_length=20)
+    email = models.EmailField(max_length = 254)
+    password = models.CharField(max_length=30)
+    zipcode = models.CharField(max_length=15) 
+    address = models.CharField(max_length = 254)
+    number = models.CharField(max_length = 10)
+    address_complement = models.CharField(max_length=30) 
+    neighborhood = models.CharField(max_length = 30)
+    city = models.CharField(max_length = 100)
+    country = models.CharField(max_length = 100)
+
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now= True)
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.title
+```
+
+##### UserInstance
+```
+class UserInstance(models.Model):
+
+    """Model representing a user instance's info."""
+
+    record_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(User, on_delete= models.CASCADE)
+    user_type = models.ForeignKey(UserType, on_delete= models.CASCADE)
+    account = models.ForeignKey(Bank, on_delete= models.CASCADE)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now= True)
+```
+
+
+#### Rotas principais de Request HTTP
+- ```POST``` cadastro de usuário: inserir dados para fazer doação ou procurar pontos de compra.
+- ```POST``` cadastro de parceiro: inserir dados para receber doação ou divulgar pontos de compra.
+- ```GET``` filtro: permite que o usuário filtre as informações de interesse e receba uma interface renderizada baseada no sistema de recomendação.
+- ```DELETE``` usuário: permite fazer com o que o usuário exclua sua conta.
+- ```DELETE``` parceiro: permite fazer com o que o parceiro exclua sua conta.
 
 #### Plataforma Desktop
 Para fins de demonstração, é apresentado na imagem abaixo a homepage desktop inicial do template do bootstrap. 
 
-### Modelo de recomendação
-Como método de filtragem de conteúdo, inicialmente procura-se utilizar a filtragem baseada em contéudo, ou Content-Based, onde são geradas recomendações baseadas em contéudos já consumidos pelo usuário - criando um perfil desse. Tem como vantagem o feedback dispensável do usuário para que seja recomendado contéudo de qualidade. Futuramente, é possível a utilização de outra forma de filtragem de conteúdo, a colaborativa, ou Collaborative Filter. Tal abordagem assimila um padrão comum de contéudo entre usuários diferentes e passa a mesclar as características, gerando uma recomendação para ambos os usuários. Com relação à primeira filtragem, a coletiva permite que o usuário saia da bolha de conteúdo.
-
 ## Projeto futuro
+No futuro, pretende-se manter a implementação do back-end em Django REST Framework, e, além disso, serão desenvolvidos tantos front-end e mobile client em React Native. Na questão do armazenamento de dados, a proposta é utilizar o serviço Cloud (AWS Bucket S3) e estruturar um Data Lake para fluxo e tratamento de dados, utilizando o modelo de recomendação dentro do ambiente em nuvem para se comunicar com a API.
+
+### Modelo de recomendação
+Como método de filtragem de conteúdo, inicialmente, procura-se utilizar a filtragem baseada em contéudo, ou Content-Based, onde são geradas recomendações baseadas em contéudos já consumidos pelo usuário - criando um perfil desse. Tem como vantagem o feedback dispensável do usuário para que seja recomendado contéudo de qualidade. Futuramente, é possível a utilização de outra forma de filtragem de conteúdo, a colaborativa, ou Collaborative Filter. Tal abordagem assimila um padrão comum de contéudo entre usuários diferentes e passa a mesclar as características, gerando uma recomendação para ambos os usuários. Com relação à primeira filtragem, a coletiva permite que o usuário saia da bolha de conteúdo.
