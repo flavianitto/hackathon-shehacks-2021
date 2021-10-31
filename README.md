@@ -9,11 +9,11 @@ Unir dois cenários divergentes no Brasil: a fome e o desperdício de alimentos,
 ## Protótipo
 Inicialmente, foi criado um design para contemplar algumas telas principais que o aplicativo mobile forneceria, tais quais: tela inicial, tela de login, tela de cadastro inicial, homepage, tela de carregamento, informações de dados bancários e barra de navegação lateral. O fluxo simulado pela plataforma Figma por ser visualizado a seguir:
 
-<img width="698" alt="figma" src="https://user-images.githubusercontent.com/37030292/139593707-e6c7cd1f-6582-4bc8-bb2d-30a126b45d5d.PNG">
+<p align="center"><img  width="698" alt="demonstração do aplicativo através do figma" src="https://user-images.githubusercontent.com/37030292/139593707-e6c7cd1f-6582-4bc8-bb2d-30a126b45d5d.PNG" /></p>
 
 A arquitetura proposta para o MVP da plataforma seria utilizar Django REST Framework para o back-end e comunicação com o Banco de Dados Local, sendo que, para o front-end e Mobile, seria utilizado React Native com design responsivo, como ilustrado no fluxograma abaixo.
 
-![](https://miro.medium.com/max/614/1*9SmHhzWDXBCpRi3CpQKowg.png)
+<p align="center"><img  width="500" alt="fluxograma do Django REST" src="https://miro.medium.com/max/614/1*9SmHhzWDXBCpRi3CpQKowg.png" /></p>
 
 Trata-se de uma arquitetura bem simplória, mas que atenderia para fins demonstrativos no que tange a captação de parceiros e investidores/patrocinadores iniciais.
 
@@ -21,7 +21,7 @@ Trata-se de uma arquitetura bem simplória, mas que atenderia para fins demonstr
 #### Back-end em Django REST Framework
 Para consumir as requisições feitas para a plataforma, será utilizando o framework no intuito de se comunicar com o banco de dados e retornar as informações solicitadas como resposta. Executando a aplicação localmente, tem-se o painel de administrador a seguir para monitorar tais solicitações enviadas pelo usuário.
 
-<img width="662" alt="backend-django-rest" src="https://user-images.githubusercontent.com/37030292/139594127-140d9ae5-a4da-4a81-9273-40b74a46afcd.PNG">
+<p align="center"><img width="698" alt="backend Django REST" src="https://user-images.githubusercontent.com/37030292/139594127-140d9ae5-a4da-4a81-9273-40b74a46afcd.PNG"/></p>
 
 #### Modelagem do Banco de Dados (`models.py`)
 Através do levantamento de informações relevantes para o projeto, se é pretendido utiliza-las na composição do sistema de recomendação para clientes, como localidades carentes de auxílio próximas a eles.
