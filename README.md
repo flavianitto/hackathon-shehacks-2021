@@ -135,7 +135,7 @@ class UserInstance(models.Model):
 - ```POST``` cadastro de parceiro: inserir dados para receber doação ou divulgar pontos de compra.
 - ```GET``` filtro: permite que o usuário filtre as informações de interesse e receba uma interface renderizada baseada no sistema de recomendação.
 - ```DELETE``` usuário: permite fazer com o que o usuário exclua sua conta.
-- - ```DELETE``` parceiro: permite fazer com o que o parceiro exclua sua conta.
+- ```DELETE``` parceiro: permite fazer com o que o parceiro exclua sua conta.
 
 #### Plataforma Desktop
 Para fins de demonstração, é apresentado na imagem abaixo a homepage desktop inicial do template do bootstrap. 
