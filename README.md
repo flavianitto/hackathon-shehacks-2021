@@ -6,19 +6,29 @@ Levando em consideração a questão de insegurança alimentar e miséria que as
 ## Objetivo
 Unir dois cenários divergentes no Brasil: a fome e o desperdício de alimentos, transformando-os em solução um para o outro. Nossa ideia viabilizará que o pequeno produtor possa fornecer seu excedente de alimentos diário e, para as ONGs, será feito o repasse dos recursos recolhidos por essas.
 
-## Público-alvo
-ONGs e Pequenos produtores (agricultura familiar), que pretendam doar ou participar de eventos onde busca-se viabilizar alimentos por valores acessíveis para famílias em situação de carência. Dessa forma, acreditamos que a atitude causará impacto positivo!
-
-## Diferencial
-Nosso diferencial se aplica a não só a promoção de doações para famílias, como também planejamos promover o reconhecimento de pequenos agricultores ao que planeja-se levar para universidades e comunidades locais pequenas feiras, de modo que os agricultores possam vender seus alimentos em preços acessíveis e que ainda gerarão lucro para esses.
-
 ## Protótipo
 Inicialmente, foi criado um design para contemplar algumas telas principais que o aplicativo mobile forneceria, tais quais: tela inicial, tela de login, tela de cadastro inicial, homepage, tela de carregamento, informações de dados bancários e barra de navegação lateral. O fluxo simulado pela plataforma Figma por ser visualizado a seguir:
 
 <img width="698" alt="figma" src="https://user-images.githubusercontent.com/37030292/139593707-e6c7cd1f-6582-4bc8-bb2d-30a126b45d5d.PNG">
 
-
+A arquitetura proposta para o MVP da plataforma seria utilizar Django REST Framework para o back-end e comunicação com o Banco de Dados Local, sendo que, para o front-end e Mobile, seria utilizado React Native com design responsivo, como ilustrado no fluxograma abaixo.
 
 ![](https://miro.medium.com/max/614/1*9SmHhzWDXBCpRi3CpQKowg.png)
 
+Trata-se de uma arquitetura bem simplória, mas que atenderia para fins demonstrativos no que tange a captação de parceiros e investidores/patrocinadores iniciais.
+
+### Etapas
+#### Back-end em Django REST Framework
+Para consumir as requisições feitas para a plataforma, será utilizando o framework no intuito de se comunicar com o banco de dados e retornar as informações solicitadas como resposta. Executando a aplicação localmente, tem-se o painel de administrador a seguir para monitorar tais solicitações enviadas pelo usuário.
+
+<img width="662" alt="backend-django-rest" src="https://user-images.githubusercontent.com/37030292/139594127-140d9ae5-a4da-4a81-9273-40b74a46afcd.PNG">
+
+#### Modelagem do Banco de Dados (`models.py`)
+
+#### Rotas principais (HTTP REST API)
+
+#### Plataforma Desktop
+
 ## Projeto futuro
+
+### Modelo de recomendação
